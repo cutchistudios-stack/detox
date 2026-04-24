@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reto Detox 21 Días | Transforma tu salud</title>
+  <meta name="description" content="Tu dosis de energía diaria con ingredientes 100% naturales. Solo 1 minuto, solo agua. 21 sobres pre-porcionados.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════ RESET & BASE ═══════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ═══════════════ VARIABLES ═══════════════ */
+    :root {
+      --green-50: #ecfdf5;
+      --green-100: #d1fae5;
+      --green-200: #a7f3d0;
+      --green-300: #6ee7b7;
+      --green-400: #34d399;
+      --green-500: #10b981;
+      --green-600: #059669;
+      --green-700: #047857;
+      --green-800: #065f46;
+      --green-900: #064e3b;
+      --amber-400: #fbbf24;
+      --amber-500: #f59e0b;
+      --amber-600: #d97706;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+      --shadow-green: 0 10px 30px -5px rgba(5,150,105,0.3);
+      --radius: 12px;
+      --max-width: 1200px;
+    }
+
+    /* ═══════════════ UTILITIES ═══════════════ */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+    .section { padding: 80px 0; }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      text-align: center;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .green { color: var(--green-600); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--green-600);
+      color: #fff;
+      box-shadow: var(--shadow-green);
+    }
+    .btn-primary:hover { background: var(--green-700); transform: translateY(-2px); box-shadow: 0 14px 34px -5px rgba(5,150,105,0.4); }
+    .btn-outline {
+      background: transparent;
+      color: var(--green-700);
+      border: 2px solid var(--green-200);
+    }
+    .btn-outline:hover { background: var(--green-50); border-color: var(--green-300); }
+    .btn-white {
+      background: #fff;
+      color: var(--green-700);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-white:hover { background: var(--green-50); transform: translateY(-2px); }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--amber-500);
+      color: #fff;
+    }
+
+    /* ═══════════════ ANIMATIONS ═══════════════ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════ NAVBAR ═══════════════ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: all 0.3s ease;
+    }
+    .navbar.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+      padding: 10px 0;
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--green-800);
+    }
+    .logo svg { width: 28px; height: 28px; color: var(--green-600); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-700);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--green-600); }
+    .nav-cta {
+      display: none;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+      border-radius: 8px;
+    }
+    .hamburger:hover { background: var(--green-50); }
+    .hamburger span {
+      width: 22px;
+      height: 2px;
+      background: var(--gray-700);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background: #fff;
+      box-shadow: -4px 0 30px rgba(0,0,0,0.1);
+      z-index: 1001;
+      padding: 80px 28px 28px;
+      transition: right 0.3s ease;
+    }
+    .mobile-menu.open { right: 0; }
+    .mobile-menu a {
+      display: block;
+      padding: 14px 16px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--gray-700);
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .mobile-menu a:hover { background: var(--green-50); color: var(--green-700); }
+    .mobile-menu .btn { width: 100%; margin-top: 16px; }
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .overlay.show { display: block; opacity: 1; }
+
+    /* ═══════════════ HERO ═══════════════ */
+    .hero {
+      background: linear-gradient(180deg, var(--green-50) 0%, #ffffff 100%);
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: rgba(167,243,208,0.3);
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      background: rgba(251,191,36,0.15);
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-badge { margin-bottom: 20px; }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--gray-900);
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--green-600), var(--green-400));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      margin-bottom: 32px;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-image-wrapper {
+      position: relative;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .hero-image-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      background: linear-gradient(135deg, rgba(167,243,208,0.4), rgba(251,191,36,0.25));
+      border-radius: 24px;
+      filter: blur(20px);
+    }
+    .hero-image {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--green-100);
+    }
+    .hero-image img { width: 100%; display: block; }
+
+    /* ═══════════════ BENEFITS ═══════════════ */
+    .benefits { background: #fff; }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .benefit-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 24px;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    .benefit-card:hover {
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+      border-color: var(--green-100);
+    }
+    .benefit-icon {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--green-500), var(--green-600));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(5,150,105,0.25);
+    }
+    .benefit-icon svg { width: 24px; height: 24px; color: #fff; }
+    .benefit-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+
+    /* ═══════════════ HOW IT WORKS ═══════════════ */
+    .how-it-works { background: linear-gradient(180deg, var(--green-50) 0%, #fff 100%); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      position: relative;
+    }
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .step-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      border: 4px solid var(--green-100);
+    }
+    .step-circle-inner {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-500), var(--green-600));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(5,150,105,0.25);
+    }
+    .step-circle-inner svg { width: 28px; height: 28px; color: #fff; }
+    .step-number {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--amber-500);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+    }
+    .step h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+    .step p {
+      font-size: 0.92rem;
+      color: var(--gray-500);
+      max-width: 280px;
+      line-height: 1.6;
+    }
+
+    /* ═══════════════ INGREDIENTS ═══════════════ */
+    .ingredients { background: #fff; }
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .ingredients-image {
+      position: relative;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .ingredients-image::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      background: var(--green-100);
+      border-radius: 20px;
+      filter: blur(20px);
+      opacity: 0.5;
+    }
+    .ingredients-image img {
+      position: relative;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--green-100);
+    }
+    .ingredients-list { display: flex; flex-direction: column; gap: 20px; }
+    .ingredient-item { display: flex; align-items: flex-start; gap: 14px; }
+    .ingredient-check {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      background: var(--green-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .ingredient-check svg { width: 16px; height: 16px; color: var(--green-600); }
+    .ingredient-item strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--gray-900);
+    }
+    .ingredient-item span {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+    .ingredients-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      background: var(--green-50);
+      color: var(--green-700);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* ═══════════════ TESTIMONIALS ═══════════════ */
+    .testimonials { background: linear-gradient(180deg, var(--green-50) 0%, #fff 100%); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+    .testimonial-card:hover { box-shadow: var(--shadow-xl); transform: translateY(-4px); }
+    .testimonial-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .testimonial-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--green-100);
+    }
+    .testimonial-name { font-weight: 700; color: var(--gray-900); font-size: 0.95rem; }
+    .stars { display: flex; gap: 2px; margin-top: 2px; }
+    .stars svg { width: 14px; height: 14px; color: var(--amber-400); fill: var(--amber-400); }
+    .testimonial-card p {
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ═══════════════ PRICING ═══════════════ */
+    .pricing { background: #fff; }
+    .pricing-card-wrapper { max-width: 440px; margin: 0 auto; }
+    .pricing-card {
+      position: relative;
+      background: #fff;
+      border: 2px solid var(--green-200);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+    .pricing-popular {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 6px 18px;
+      background: var(--amber-500);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 0 0 0 12px;
+    }
+    .pricing-inner { padding: 40px 32px; text-align: center; }
+    .pricing-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 16px;
+    }
+    .pricing-price {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--green-600);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-period {
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 24px;
+    }
+    .pricing-divider {
+      height: 1px;
+      background: var(--green-100);
+      margin-bottom: 24px;
+    }
+    .pricing-features {
+      text-align: left;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--gray-700);
+    }
+    .pricing-features li svg { width: 18px; height: 18px; min-width: 18px; color: var(--green-600); }
+    .pricing .btn { width: 100%; padding: 18px; font-size: 1.05rem; }
+    .pricing-guarantee {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      margin-top: 16px;
+    }
+
+    /* ═══════════════ FAQ ═══════════════ */
+    .faq { background: linear-gradient(180deg, var(--green-50) 0%, #fff 100%); }
+    .faq-container { max-width: 680px; margin: 0 auto; }
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--green-100);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .faq-question:hover { background: var(--green-50); }
+    .faq-question svg {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      color: var(--green-600);
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-question svg { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 0 24px 20px;
+    }
+    .faq-answer p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════ CTA SECTION ═══════════════ */
+    .cta-section {
+      background: linear-gradient(135deg, var(--green-600), var(--green-700), var(--green-800));
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .cta-section p {
+      font-size: 1.05rem;
+      color: var(--green-200);
+      margin-bottom: 32px;
+    }
+
+    /* ═══════════════ FOOTER ═══════════════ */
+    .footer {
+      background: var(--gray-900);
+      padding: 48px 0;
+      color: var(--gray-400);
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .footer-logo svg { width: 20px; height: 20px; color: var(--green-400); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 0.85rem; color: var(--gray-400); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--green-400); }
+    .footer-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: var(--green-600);
+      color: #fff;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .footer-whatsapp:hover { background: var(--green-500); }
+    .footer-whatsapp svg { width: 16px; height: 16px; }
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--gray-700);
+      margin-top: 8px;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 24px;
+    }
+
+    /* ═══════════════ RESPONSIVE - TABLET ═══════════════ */
+    @media (min-width: 640px) {
+      .hero h1 { font-size: 3rem; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .cta-section h2 { font-size: 2.5rem; }
+      .section { padding: 96px 0; }
+    }
+
+    /* ═══════════════ RESPONSIVE - DESKTOP ═══════════════ */
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-cta { display: inline-flex; }
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+      .hero-image-wrapper { margin: 0; }
+      .steps-grid { grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+      .steps-grid::before {
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: 16%;
+        right: 16%;
+        height: 2px;
+        background: var(--green-200);
+        z-index: 0;
+      }
+      .step { position: relative; z-index: 1; }
+      .ingredients-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    @media (min-width: 1024px) {
+      .hero { padding: 160px 0 100px; }
+      .hero h1 { font-size: 3.5rem; }
+      .section-title { font-size: 2.25rem; }
+      .container { padding: 0 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ NAVBAR ═══════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        Reto Detox 21
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#como-funciona">Cómo Funciona</a>
+        <a href="#ingredientes">Ingredientes</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#precio" class="btn btn-primary nav-cta" style="padding:10px 24px;font-size:0.85rem;">Pedir Ahora</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#beneficios" class="mobile-link">Beneficios</a>
+    <a href="#como-funciona" class="mobile-link">Cómo Funciona</a>
+    <a href="#ingredientes" class="mobile-link">Ingredientes</a>
+    <a href="#testimonios" class="mobile-link">Testimonios</a>
+    <a href="#precio" class="mobile-link">Precio</a>
+    <a href="#precio" class="btn btn-primary mobile-link">Pedir Ahora</a>
+  </div>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="fade-up">
+          <div class="hero-badge">
+            <span class="badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26z"/></svg>
+              21 sobres por solo $24
+            </span>
+          </div>
+          <h1>Transforma tu salud en <span>21 días</span></h1>
+          <p>Tu dosis de energía diaria. Solo 1 minuto. Solo agua. <strong>Resultados reales.</strong></p>
+          <div class="hero-buttons">
+            <a href="#precio" class="btn btn-primary">Comenzar el Reto</a>
+            <a href="#beneficios" class="btn btn-outline">Conocer más</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper fade-up">
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=800&h=800&fit=crop&crop=center" alt="Kit Reto Detox 21 Días">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ BENEFITS ═══════════ -->
+  <section class="benefits section" id="beneficios">
+    <div class="container">
+      <h2 class="section-title fade-up">¿Por qué elegir <span class="green">Reto Detox 21</span>?</h2>
+      <p class="section-subtitle fade-up">Resultados comprobados con ingredientes 100% naturales</p>
+      <div class="benefits-grid">
+        <!-- Benefit 1 -->
+        <div class="benefit-card fade-up">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          </div>
+          <div>
+            <h3>Desintoxicación Profunda</h3>
+            <p>Elimina toxinas acumuladas y renueva tu cuerpo desde adentro de forma natural.</p>
+          </div>
+        </div>
+        <!-- Benefit 2 -->
+        <div class="benefit-card fade-up">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div>
+            <h3>Energía Natural</h3>
+            <p>Olvídate de la cafeína. Energía limpia y duradera todo el día sin caídas.</p>
+          </div>
+        </div>
+        <!-- Benefit 3 -->
+        <div class="benefit-card fade-up">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </div>
+          <div>
+            <h3>Mejora Digestiva</h3>
+            <p>Reduce la inflamación y mejora tu digestión desde la primera semana.</p>
+          </div>
+        </div>
+        <!-- Benefit 4 -->
+        <div class="benefit-card fade-up">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h3>Solo 1 Minuto</h3>
+            <p>Preparación instantánea. Solo agrega agua y listo. Sin licuadora.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ HOW IT WORKS ═══════════ -->
+  <section class="how-it-works section" id="como-funciona">
+    <div class="container">
+      <h2 class="section-title fade-up">Cómo Funciona el Reto</h2>
+      <p class="section-subtitle fade-up">Tres simples pasos para transformar tu bienestar</p>
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step fade-up">
+          <div class="step-circle">
+            <div class="step-circle-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            </div>
+            <span class="step-number">1</span>
+          </div>
+          <h3>Recibe tu Kit</h3>
+          <p>21 sobres pre-porcionados con ingredientes naturales llegan a tu puerta.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="step fade-up">
+          <div class="step-circle">
+            <div class="step-circle-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            </div>
+            <span class="step-number">2</span>
+          </div>
+          <h3>Prepáralo en 1 Minuto</h3>
+          <p>Agrega agua, mezcla y listo. Sin licuadora, sin complicaciones.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="step fade-up">
+          <div class="step-circle">
+            <div class="step-circle-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </div>
+            <span class="step-number">3</span>
+          </div>
+          <h3>Siente la Diferencia</h3>
+          <p>En 21 días notarás más energía, menos inflamación y mejor digestión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ INGREDIENTS ═══════════ -->
+  <section class="ingredients section" id="ingredientes">
+    <div class="container">
+      <h2 class="section-title fade-up">Ingredientes <span class="green">100% Naturales</span></h2>
+      <p class="section-subtitle fade-up">Cada sobre contiene una mezcla perfecta de superalimentos</p>
+      <div class="ingredients-grid">
+        <div class="ingredients-image fade-up">
+          <img src="https://images.unsplash.com/photo-1615484477778-ca3b77940c25?w=800&h=800&fit=crop&crop=center" alt="Ingredientes naturales del Reto Detox 21">
+        </div>
+        <div class="fade-up">
+          <div class="ingredients-list">
+            <div class="ingredient-item">
+              <div class="ingredient-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div><strong>Apio</strong><span>Antiinflamatorio natural y rico en electrolitos</span></div>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div><strong>Jengibre</strong><span>Potencia el sistema inmunológico</span></div>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div><strong>Piña</strong><span>Rica en bromelina y vitamina C</span></div>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div><strong>Manzana verde</strong><span>Fibra y antioxidantes naturales</span></div>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div><strong>Menta fresca</strong><span>Digestión y frescura natural</span></div>
+            </div>
+          </div>
+          <div class="ingredients-badge">Sin azúcar añadida &nbsp;·&nbsp; Sin conservadores &nbsp;·&nbsp; Vegano</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TESTIMONIALS ═══════════ -->
+  <section class="testimonials section" id="testimonios">
+    <div class="container">
+      <h2 class="section-title fade-up">Lo que dicen nuestros <span class="green">clientes</span></h2>
+      <p class="section-subtitle fade-up">+2,000 personas ya transformaron su salud</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-header">
+            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="María G.">
+            <div>
+              <div class="testimonial-name">María G.</div>
+              <div class="stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+              </div>
+            </div>
+          </div>
+          <p>"¡En 10 días ya no me sentía hinchada! La energía que me da por las mañanas es increíble."</p>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-header">
+            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Carlos R.">
+            <div>
+              <div class="testimonial-name">Carlos R.</div>
+              <div class="stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+              </div>
+            </div>
+          </div>
+          <p>"Lo tomo en la oficina. Es super práctico y me quita ese sueño de las 11am. 100% recomendado."</p>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-header">
+            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" alt="Ana L.">
+            <div>
+              <div class="testimonial-name">Ana L.</div>
+              <div class="stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+              </div>
+            </div>
+          </div>
+          <p>"Soy mamá de 2 y no tengo tiempo para licuados. Esto es perfecto, en 1 minuto listo. Mis hijos me piden su propio vaso."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PRICING ═══════════ -->
+  <section class="pricing section" id="precio">
+    <div class="container">
+      <h2 class="section-title fade-up">Invierte en tu salud por menos de <span class="green">$1.14 al día</span></h2>
+      <p class="section-subtitle fade-up">Tu bienestar no tiene precio, pero tu detox sí es accesible</p>
+      <div class="pricing-card-wrapper fade-up">
+        <div class="pricing-card">
+          <span class="pricing-popular">Más Popular</span>
+          <div class="pricing-inner">
+            <p class="pricing-name">Kit Reto Detox 21 Días</p>
+            <div class="pricing-price">$24</div>
+            <p class="pricing-period">/ 21 días de bienestar</p>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                21 sobres pre-porcionados
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Ingredientes 100% naturales
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Guía de uso incluida
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Envío a todo el país
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Soporte por WhatsApp
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary">Pedir Ahora por WhatsApp</a>
+            <p class="pricing-guarantee">Garantía de satisfacción. Si no te gusta, te devolvemos tu dinero.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FAQ ═══════════ -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <h2 class="section-title fade-up">Preguntas Frecuentes</h2>
+      <p class="section-subtitle fade-up">Todo lo que necesitas saber antes de comenzar</p>
+      <div class="faq-container fade-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿A qué sabe?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><p>Dulce y refrescante gracias a la piña y manzana, con un toque picante del jengibre. ¡Es delicioso!</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Es polvo o líquido?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><p>Son sobres con polvo liofilizado de ingredientes naturales. Solo agregas agua y en 1 minuto está listo.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Engorda?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><p>No, al contrario. Es detox, ayuda a reducir la inflamación y el peso por retención de líquidos.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Cuánto tiempo tarda el envío?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><p>Enviamos en 24-48 horas hábiles a todo el país. Recibirás tu kit en la puerta de tu casa.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Puedo tomarlo si estoy embarazada?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><p>Recomendamos consultar con tu médico antes de iniciar cualquier nuevo suplemento alimenticio.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA SECTION ═══════════ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner fade-up">
+        <h2>¡Comienza tu transformación hoy!</h2>
+        <p>Solo 21 días para una versión más saludable y energética de ti.</p>
+        <a href="#precio" class="btn btn-white" style="padding:18px 40px;font-size:1.1rem;">Pedir Ahora por $24</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          Reto Detox 21
+        </div>
+        <div class="footer-links">
+          <a href="#">Términos</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Contacto</a>
+        </div>
+        <a href="#" class="footer-whatsapp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escríbenos por WhatsApp
+        </a>
+        <div class="footer-divider"></div>
+        <p class="footer-copy">&copy; 2025 Reto Detox 21. Todos los derechos reservados. Este producto no pretende diagnosticar, tratar, curar o prevenir ninguna enfermedad.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ JAVASCRIPT ═══════════ -->
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      overlay.classList.toggle('show');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+
+    // Fade-up animations on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
